@@ -9,7 +9,7 @@ def test_reverse():
 
 def test_first_to_upper():
     assert first_to_upper("abcd") == "Abcd"
-    assert first_to_upper("litwo oJCZYZNO MoJa") == "Litwo OJCZYZNO Moja"
+    assert first_to_upper("litwo oJCZYZNO MoJa") == "Litwo OJCZYZNO MoJa"
 
 
 def test_count_vowels():
