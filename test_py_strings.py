@@ -8,14 +8,15 @@ def test_reverse():
 
 
 def test_first_to_upper():
-    assert first_to_upper("abcd") == "Abcs"
+    assert first_to_upper("abcd") == "Abcd"
     assert first_to_upper("litwo oJCZYZNO MoJa") == "Litwo OJCZYZNO Moja"
 
 
 def test_count_vowels():
     assert count_vowels("abcdef") == 2
     assert count_vowels("AbcdeF") == 2
-    assert count_vowels("XYZ") == 0
+    assert count_vowels("XYZ") == 1
+    assert count_vowels("XZ") == 0
 
 
 def test_sum_digits():
