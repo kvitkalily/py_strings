@@ -19,7 +19,7 @@ def count_vowels(text: str) -> int:
 	vowels = 0
 	l = len(text)
 	for i in range (l):
-		if text[i] in "AEUOIYyaeuio":#na linuksie nie mam dostepu do polskich znakow, reszta dziala
+		if text[i] in "ĄAEĘUOÓIYyaąeęóuio":#na linuksie nie mam dostepu do polskich znakow, więc ich wpisałam z gita w telefonie
 			vowels +=1
 	return vowels
 
