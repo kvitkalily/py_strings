@@ -1,83 +1,40 @@
 def reverse(text: str) -> str:
-    """
-    Return the 'text' backwards.
 
-    Parameters
-    ----------
-    text: str
-        The input string
-
-    Returns
-    -------
-    str
-        The text written backwards.
-    """
-    pass
+    return text[::-1]
 
 
 def first_to_upper(text: str) -> str:
-    """
-    Changes each first character of the word to uppercase.
-
-    Parameters
-    ----------
-    text: str
-        The input string
-
-    Returns
-    -------
-    str
-        The modified text
-    """
-    pass
-
+	a = text.split()
+	c = [word[:1].upper() + word[1:] for word in a] 
+	result = ' '.join(c)
+	return result #tutaj potknelam. na poczatku kod wygladal tak:    c = text.capitalize()
+									#b = c.split()
+									#if len(b) >= 2:
+									#b[1] = b[1].upper()
+									#result = ' '.join(b)
+									#return result 
+		#ale on tez nie dziala
 
 def count_vowels(text: str) -> int:
-    """
-    Counts number of vovels in the text.
-
-    Parameters
-    ----------
-    text: str
-        The input string
-
-    Returns
-    -------
-    inp
-        Number of vowels.
-    """
-    pass
+	vowels = 0
+	l = len(text)
+	for i in range (l):
+		if text[i] in "AEUOIYyaeuio":#na linuksie nie mam dostepu do polskich znakow, reszta dziala
+			vowels +=1
+	return vowels
 
 
 def sum_digits(text: str) -> int:
-    """
-    Finds all digitts in the text and returns its sum.
-
-    Parameters
-    ----------
-    text: str
-        The input string
-
-    Returns
-    -------
-    int
-        Sum of all digits in the text.
-    """
-    pass
+	total = 0
+	for i in text:
+		if i.isdigit():#sprawdzamy znaczek i czy jest cyfra - isdigit.
+			total += int(i) #konwertujemy w liczbe calkowita
+	return total
 
 
 def search_substr(text: str, sub: str) -> int:
-    """
-    Search for sub(string) in the text. Returns the position or None.
-
-    Parameters
-    ----------
-    text: str
-        The input string
-
-    Returns
-    -------
-    int or None
-        Position of the sub(string) or None.
-    """
-    pass
+	c = text.find(sub) #indeks tego wyrazu
+	if c == -1:
+		print("None")
+	else: return c
+	
