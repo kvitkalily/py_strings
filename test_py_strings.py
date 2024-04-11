@@ -5,6 +5,7 @@ from py_strings import *
 
 def test_reverse():
     data = (
+        ("", ""),
         ("abc", "cba"),
         ("xZz qwe", "ewq zZx"),
         ("xZz\nqwe", "ewq\nzZx"),
@@ -19,6 +20,7 @@ def test_reverse():
 
 def test_first_to_upper():
     data = (
+        ("", ""),
         ("abc", "Abc"),
         ("xZz qwe", "XZz Qwe"),
         ("xZz\nqwe", "XZz\nQwe"),
@@ -28,6 +30,7 @@ def test_first_to_upper():
         ("raz.dwa,trzy;cztery", "Raz.Dwa,Trzy;Cztery"),
         ("łabudibu łabidudaj ą ę ó ń", "Łabudibu Łabidudaj Ą Ę Ó Ń"),
         ("997zgłoś się", "997zgłoś Się"),
+        ("it's python, dude!Wow...", "It'S Python, Dude!Wow..."),
     )
 
     for d in data:
@@ -36,6 +39,7 @@ def test_first_to_upper():
 
 def test_count_vowels():
     data = (
+        ("", 0),
         ("abc", 1),
         ("xZz", 0),
         ("xZz\nqwe", 1),
@@ -50,6 +54,7 @@ def test_count_vowels():
 
 def test_sum_digits():
     data = (
+        ("", 0),
         ("abc", 0),
         ("xZz", 0),
         ("Countdown: 3... 2... 1... Start!", 6),
@@ -63,6 +68,7 @@ def test_sum_digits():
 
 def test_search_substr():
     data = (
+        ("", "", 0),
         ("abc", "d", None),
         ("xZz", "z", 2),
         ("Litwo, ojczyzno moja", "ojcz", 7),
