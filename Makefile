@@ -1,11 +1,18 @@
-all:
-	virtualenv ../venv
-	. ../venv/bin/activate && pip install --break-system-packages pytest pylint pycodestyle flake8
+.PHONY: all
 
-test:
-	pytest
+all: setup test check
+
+setup: requirements.txt
+	virtualenv ../venv
+	../venv/bin/pip install -r requirements.txt
+
+test: ../venv/bin/pip
+	../venv/bin/pytest
 
 check:
-	pylint py_strings.py
-	pycodestyle --ignore=E203 py_strings.py'
-	flake8 --ignore E203,F401,F403,F405 .
+	../venv/bin/pylint py_strings.py
+	../venv/bin/pycodestyle --ignore=E203 py_strings.py
+	../venv/bin/flake8 --ignore E203,F401,F403,F405 .
+
+clean:
+	rm -rf __pycache__

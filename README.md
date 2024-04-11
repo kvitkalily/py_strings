@@ -38,14 +38,15 @@ W `py_strings.py` zaimplementuj zestaw funkcji, który będzie wykonywał nastę
 1. W terminalu wykonaj polecania:
     ```bash
     cd py_strings
-    make
-    . ../venv/bin/activate
+    make setup
     make test
     make check
     ```
     Spowoduje to stworzenie środowiska virtualnego i uruchomienie testów. Projekt początkowy będzie miał sporo błędów i ostrzeżeń. Testy możesz uruchamiać za pomocą `make test`.
     
     `make check` uruchomi kilka programów sprawdzajaćych jakość napisanego kodu. Komunikaty błędów mogą pomóć Ci ulepszyć kod.
+
+    Polecenie `make` lub `make all` wykona wszystkie kroki powyżej automatycznie.
 
 1. W ramach pracy nad projektem powinieneś edytować tylko plik `py_strings.py`, pozostałe pliki powinny być nieedytowane.
 
