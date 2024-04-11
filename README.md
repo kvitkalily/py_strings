@@ -39,6 +39,7 @@ W `py_strings.py` zaimplementuj zestaw funkcji, który będzie wykonywał nastę
     ```bash
     cd py_strings
     make
+    . ../venv/bin/activate
     make test
     make check
     ```
