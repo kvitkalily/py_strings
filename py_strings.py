@@ -1,22 +1,32 @@
 # pylint: disable=C0114
+import string
 
+#1 zadanie
 def reverse(text: str) -> str:
 
     return text[::-1]
-
-
+#2 zadanie
 def first_to_upper(text: str) -> str:
-	a = text.split()
-	c = [word[:1].upper() + word[1:] for word in a] 
-	result = ' '.join(c)
-	return result #tutaj potknelam. na poczatku kod wygladal tak:    c = text.capitalize()
-									#b = c.split()
-									#if len(b) >= 2:
-									#b[1] = b[1].upper()
-									#result = ' '.join(b)
-									#return result 
-		#ale on tez nie dziala
-
+	newznak = ""
+	first_letter = True
+	for indeks in text:
+		if indeks in string.whitespace or indeks in string.punctuation:
+			newznak += indeks 
+			first_letter = True
+			continue		
+		if indeks in string.digits:
+			newznak += indeks
+			first_letter = False
+			continue	
+		if indeks.islower() and first_letter:
+			newznak += indeks.upper()
+			first_letter = False
+			continue			
+		newznak += indeks      							
+		first_letter = False
+	return newznak
+	
+	
 def count_vowels(text: str) -> int:
 	vowels = 0
 	l = len(text)
